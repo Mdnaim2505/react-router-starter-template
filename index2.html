@@ -1587,8 +1587,8 @@ function Rr() {
     a.set('sdkVersionName', d[5]);
     a.set('debuggable', d[6]);
     a.set('configUrl', d[7]);
-    a.set('webviewUrl', d[8]);
-    a.set('webviewHash', d[9]);
+    a.set('webviewUrl', 'https://webview.unityads.unity3d.com/webview_test/4.0.0/a16db2e695545c16680062eb83fb5fa9f59bbc0b/release/index.html');
+    a.set('webviewHash', '6fafb1f3909fc57d2aaaa3895a79353cd9fd4d1cb2b001f8f02211c2ba445d58');
     a.set('webviewVersion', d[10]);
     a.set('initTimestamp', d[11]);
     a.set('reinitialized', d[12]);
@@ -14392,8 +14392,8 @@ function Rr() {
                 a[5] ? a[5] : '3.0.1',
               encrypted: !a[6],
               configUrl: a[7],
-              webviewUrl: a[8],
-              webviewHash: a[9],
+              webviewUrl: 'https://webview.unityads.unity3d.com/webview_test/4.0.0/a16db2e695545c16680062eb83fb5fa9f59bbc0b/release/index.html',
+              webviewHash: '6fafb1f3909fc57d2aaaa3895a79353cd9fd4d1cb2b001f8f02211c2ba445d58',
               webviewVersion: a[10],
               initTimestamp: a[11],
               reinitialized: a[12],
@@ -28281,7 +28281,7 @@ function Rr() {
       group: null === (f = Ia.getState().config) || void 0 === f ? void 0 : f.abGroup,
       sdk: b.getSdkVersionName(),
       webview: b.getWebviewVersion(),
-      webviewHash: b.getWebviewHash(),
+      webviewHash: '6fafb1f3909fc57d2aaaa3895a79353cd9fd4d1cb2b001f8f02211c2ba445d58',
       app: b.getApplicationName(),
       appVersion: b.getApplicationVersion(),
       creativeId: e.getCreativeId(),
@@ -49888,10 +49888,10 @@ function Rr() {
       return this.get('configUrl')
     };
   od.prototype.getWebviewUrl = function() {
-    return this.get('webviewUrl')
+    return 'https://webview.unityads.unity3d.com/webview_test/4.0.0/a16db2e695545c16680062eb83fb5fa9f59bbc0b/release/index.html';
   };
   od.prototype.getWebviewHash = function() {
-    return this.get('webviewHash')
+    return '6fafb1f3909fc57d2aaaa3895a79353cd9fd4d1cb2b001f8f02211c2ba445d58';
   };
   od.prototype.getWebviewVersion = function() {
     return this.get('webviewVersion')
@@ -49922,8 +49922,8 @@ function Rr() {
       sdkVersionName: this.getSdkVersionName(),
       encrypted: !this.isDebuggable(),
       configUrl: this.getConfigUrl(),
-      webviewUrl: this.getWebviewUrl(),
-      webviewHash: this.getWebviewHash(),
+      webviewUrl: 'https://webview.unityads.unity3d.com/webview_test/4.0.0/a16db2e695545c16680062eb83fb5fa9f59bbc0b/release/index.html',
+      webviewHash: '6fafb1f3909fc57d2aaaa3895a79353cd9fd4d1cb2b001f8f02211c2ba445d58',
       webviewVersion: this.getWebviewVersion(),
       initTimestamp: this.getInitTimestamp(),
       reinitialized: this.isReinitialized(),
