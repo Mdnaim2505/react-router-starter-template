@@ -7,7 +7,7 @@ rules go through your SOCKS5 proxy. Everything else goes out directly, as if
 there were no VPN.
 
 - Package name: `com.vhaiup.filtervpn`
-- minSdk 24, targetSdk/compileSdk 36
+- minSdk 24, targetSdk/compileSdk 36, built for arm64-v8a by default
 - License: MIT
 
 > **Status: phase 1 of 4 (skeleton).** The project builds a signed APK with a
@@ -40,7 +40,7 @@ The script:
 |---|---|
 | `--debug` | build the debug APK |
 | `--test` | also run the JVM unit tests |
-| `--abi arm64-v8a` | build only some ABIs (faster, smaller APK) |
+| `--abi LIST` | ABIs to build; default `arm64-v8a` (64-bit ARM phones). Example: `--abi arm64-v8a,armeabi-v7a` |
 | `--skip-deps` | skip apt and sdkmanager |
 
 Requirements: an x86_64 Ubuntu/Debian host, about 6 GB of free disk, at least

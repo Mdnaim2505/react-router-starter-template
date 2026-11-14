@@ -15,7 +15,8 @@
 # Options:
 #   --debug         build the debug APK instead of release
 #   --test          also run JVM unit tests (./gradlew test)
-#   --abi LIST      comma-separated ABIs, e.g. --abi arm64-v8a  (default: all 4)
+#   --abi LIST      comma-separated ABIs (default: arm64-v8a),
+#                   e.g. --abi arm64-v8a,armeabi-v7a,x86_64
 #   --skip-deps     do not run apt / sdkmanager (assume everything is installed)
 #   -h | --help     show this help
 #
@@ -36,7 +37,7 @@ CMAKE="cmake;3.22.1"
 BUILD_TYPE="release"
 RUN_TESTS=0
 SKIP_DEPS=0
-ABIS=""
+ABIS="arm64-v8a"
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --debug) BUILD_TYPE="debug" ;;
@@ -179,7 +180,7 @@ fi
 
 # ---- 4. build ---------------------------------------------------------------------------
 GRADLE_ARGS=(--no-daemon --stacktrace)
-[[ -n "$ABIS" ]] && GRADLE_ARGS+=("-PabiFilters=$ABIS")
+GRADLE_ARGS+=("-PabiFilters=$ABIS")
 
 # Small VPS: lower the Gradle heap so the build does not get OOM-killed.
 MEM_KB="$(awk '/MemTotal/ {print $2}' /proc/meminfo 2>/dev/null || echo 0)"
