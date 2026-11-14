@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Shield with a funnel: "filtered" VPN. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <path android:fillColor="#FFFFFF"
+        android:pathData="M54,26 L78,35 L78,53 C78,68 67,79 54,83 C41,79 30,68 30,53 L30,35 Z" />
+    <path android:fillColor="#1E6FD9"
+        android:pathData="M41,44 L67,44 L57,56 L57,67 L51,70 L51,56 Z" />
+</vector>

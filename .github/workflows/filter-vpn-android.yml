@@ -1,0 +1,45 @@
+name: Filter VPN APK
+
+on:
+  push:
+    paths:
+      - 'filter-vpn/**'
+      - '.github/workflows/filter-vpn-android.yml'
+  pull_request:
+    paths:
+      - 'filter-vpn/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: filter-vpn
+    steps:
+      - uses: actions/checkout@v4
+
+      # Exercise build.sh exactly as a user would on a fresh VPS: it installs
+      # its own command-line tools, SDK platform, build-tools, NDK and CMake
+      # into a clean directory instead of using the runner's preinstalled SDK.
+      - name: Build with build.sh (release + unit tests)
+        env:
+          ANDROID_HOME: ${{ runner.temp }}/android-sdk
+          ANDROID_SDK_ROOT: ${{ runner.temp }}/android-sdk
+        run: ./build.sh --test
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: FilterVPN-apk
+          path: filter-vpn/dist/*.apk
+          if-no-files-found: error
+
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit-test-reports
+          path: filter-vpn/app/build/reports/tests/
+          if-no-files-found: ignore

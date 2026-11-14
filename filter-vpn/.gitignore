@@ -1,0 +1,25 @@
+# --- Secrets / machine-local config (never commit) ---
+local.properties
+proxy.properties
+keystore.properties
+*.jks
+*.keystore
+!debug.keystore.example
+
+# --- Gradle / Android build output ---
+.gradle/
+build/
+app/build/
+app/.cxx/
+.cxx/
+.externalNativeBuild/
+captures/
+dist/
+*.apk
+*.aab
+
+# --- IDE ---
+.idea/
+*.iml
+.vscode/
+.DS_Store
