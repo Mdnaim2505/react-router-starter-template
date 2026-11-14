@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Filter VPN</string>
+    <string name="status_native">Native engine: %1$s</string>
+    <string name="phase_note">Skeleton build. VPN engine arrives in phase 2.</string>
+</resources>

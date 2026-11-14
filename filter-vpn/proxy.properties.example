@@ -1,0 +1,12 @@
+# Optional default proxy values that are pre-filled in the app's proxy settings.
+# Copy to proxy.properties (git-ignored) and fill in your own values:
+#
+#   cp proxy.properties.example proxy.properties
+#
+# These are only defaults; you can change everything in the app UI.
+# WARNING: values here are compiled into the APK you build. Do not share that
+# APK if it contains real credentials.
+proxy.host=203.0.113.10
+proxy.port=1080
+proxy.username=
+proxy.password=
